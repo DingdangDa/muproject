@@ -23,3 +23,8 @@ add_executable(mu src/calibration_offline_data_file.c)
 target_link_libraries(mu MU_3SL_interface m MyLibrary)
 
 target_link_options(mu PRIVATE "-Wl,-rpath,/home/dingdangda/ic-mu/muproject/lib")
+
+find_library(MU_3SL_INTERFACE_LIB NAMES MU_3SL_interface.lib PATHS ${CMAKE_SOURCE_DIR}/lib)
+find_library(MU_3SL_INTERFACE_64_LIB NAMES MU_3SL_interface_64.lib PATHS ${CMAKE_SOURCE_DIR}/lib)
+
+target_link_libraries(mu ${MU_3SL_INTERFACE_LIB} ${MU_3SL_INTERFACE_64_LIB})

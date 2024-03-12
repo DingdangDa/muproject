@@ -11,4 +11,5 @@ CTestTestfile.cmake
 _deps
 build/
 !/build/measure/raw_sample_data_MU_Y_MU2L_82-32N_0.csv
+!/build/MU_3SL_interface.dll
 .vscode/

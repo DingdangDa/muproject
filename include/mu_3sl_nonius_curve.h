@@ -23,6 +23,6 @@ void optionalPrintOptimizedNoniusTrackOffsetTable(
         const MU_CalibrationAnalyzeResult* analyzeResult,
         const uint32_t masterPeriodCode,
         const char* noniusCurveCsvFilePath);
-
+void PrintOptimizedNoniusTrackOffsetTableForCopy(const MU_CalibrationAnalyzeResult* analyzeResult);
 
 #endif // MU_3SL_NONIUS_CURVE_H

@@ -53,6 +53,25 @@ void printAnalogAdjustments(const MU_Calibration* calibration)
     printAnalogTrackAdjustments(&noniusTrackAdjustments, "N");
 }
 
+// HXY
+void printAnalogAdjustmentsForCopy(const MU_Calibration* calibration)
+{
+    MU_Calibration_AnalogTrackAdjustments masterTrackAdjustments;
+    MU_Calibration_getAnalogMasterTrackAdjustments(calibration, &masterTrackAdjustments);
+    printf("\nForCopy: 0x%02X, 0x%02X, 0x%02X, 0x%02X, 0x%02X ",
+    masterTrackAdjustments.cosineGain,
+    masterTrackAdjustments.sineOffset,
+    masterTrackAdjustments.cosineOffset,
+    masterTrackAdjustments.phase,
+    masterTrackAdjustments.phaseRange);
+    MU_Calibration_AnalogTrackAdjustments noniusTrackAdjustments;
+    MU_Calibration_getAnalogNoniusTrackAdjustments(calibration, &noniusTrackAdjustments);
+    printf("0x%02X, 0x%02X, 0x%02X, 0x%02X\n",
+    noniusTrackAdjustments.sineOffset,
+    noniusTrackAdjustments.cosineOffset,
+    noniusTrackAdjustments.phase,
+    noniusTrackAdjustments.phaseRange);
+}
 
 void printRelativeAdjustments(const MU_CalibrationAnalyzeResult* analyzeResult)
 {

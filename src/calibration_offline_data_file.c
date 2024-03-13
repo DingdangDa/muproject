@@ -79,11 +79,13 @@ int main(int argc, char** argv)
 
     printf("iC-MU signal conditioning parameters after calibration:\n");
     printAnalogAdjustments(calibration);
+    printAnalogAdjustmentsForCopy(calibration); // HXY
     printf("\n\n");
 
     int numberOfCalculatedMasterPeriods =
             MU_Calibration_numberOfCalculatedMasterPeriods(analyzeResult);
     uint32_t calculatedMasterPeriodCode = (uint32_t)round(log2(numberOfCalculatedMasterPeriods));
+    PrintOptimizedNoniusTrackOffsetTableForCopy(analyzeResult); // HXY
     optionalPrintOptimizedNoniusTrackOffsetTable(
             analyzeResult,
             enableMasterPeriodAutoDetection ? calculatedMasterPeriodCode : masterPeriodCode,

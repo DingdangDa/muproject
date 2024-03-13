@@ -16,6 +16,7 @@ void printAnalogTrackAdjustments(
         const char* trackShortName);
 
 void printAnalogAdjustments(const MU_Calibration* calibration);
+void printAnalogAdjustmentsForCopy(const MU_Calibration* calibration);
 
 void printRelativeAdjustments(const MU_CalibrationAnalyzeResult* analyzeResult);
 

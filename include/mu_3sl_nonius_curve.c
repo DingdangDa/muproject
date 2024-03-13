@@ -127,3 +127,16 @@ void optionalPrintOptimizedNoniusTrackOffsetTable(
     free(noniusPosition);
     free(continuousNoniusPosition);
 }
+
+// HXY
+void PrintOptimizedNoniusTrackOffsetTableForCopy(const MU_CalibrationAnalyzeResult* analyzeResult)
+{
+    MU_Calibration_NoniusTrackOffsetTable noniusTrackOffsetTable;
+    MU_Calibration_getOptimizedNoniusTrackOffsetTable(analyzeResult, &noniusTrackOffsetTable);
+    printf("SPOForCopy: %2d, ", noniusTrackOffsetTable.spoBase);
+    for (int i = 0; i < 15; ++i) {
+        printf("%2d, ", noniusTrackOffsetTable.spoN[i]);
+    }
+    printf("%2d", noniusTrackOffsetTable.spoN[15]);
+    printf("\n");
+}

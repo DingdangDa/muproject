@@ -21,7 +21,8 @@
 
 int main(int argc, char** argv)
 {
-    const char* filepath = argc <= 1 ? "measure/raw_sample_data_MU_Y_MU2L_82-32N_0.csv" : argv[1];
+    //const char* filepath = argc <= 1 ? "measure/raw_sample_data_MU_Y_MU2L_82-32N_0.csv" : argv[1];
+    const char* filepath = argc <= 1 ? "measure/raw_sample_data_MU.csv" : argv[1];
     const uint32_t masterPeriodCode = argc <= 2 ? 5 : strtol(argv[2], NULL, 0);
     const uint8_t revisionCode      = argc <= 3 ? MU_REV_MU_Y2 : strtol(argv[3], NULL, 0);
 

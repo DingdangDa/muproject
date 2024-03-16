@@ -134,9 +134,13 @@ void PrintOptimizedNoniusTrackOffsetTableForCopy(const MU_CalibrationAnalyzeResu
     MU_Calibration_NoniusTrackOffsetTable noniusTrackOffsetTable;
     MU_Calibration_getOptimizedNoniusTrackOffsetTable(analyzeResult, &noniusTrackOffsetTable);
     printf("SPOForCopy: %2d, ", noniusTrackOffsetTable.spoBase);
-    for (int i = 0; i < 14; ++i) {
+    for (int i = 0; i < 14; i++) {
         printf("%2d, ", noniusTrackOffsetTable.spoN[i]);
     }
-    printf("%2d", noniusTrackOffsetTable.spoN[14]);
-    printf("\n");
+    printf("%2d\n", noniusTrackOffsetTable.spoN[14]);
+    int sum_spo_0_14 = 0;
+    for (int i = 0; i<15; i++) {
+        sum_spo_0_14 = sum_spo_0_14 + noniusTrackOffsetTable.spoN[i];
+    }
+    printf("Sum of SPO_0 to SPO_14: %d (valid -7 ~ 7)\n", sum_spo_0_14);
 }

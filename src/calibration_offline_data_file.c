@@ -86,6 +86,8 @@ int main(int argc, char** argv)
             MU_Calibration_numberOfCalculatedMasterPeriods(analyzeResult);
     uint32_t calculatedMasterPeriodCode = (uint32_t)round(log2(numberOfCalculatedMasterPeriods));
     PrintOptimizedNoniusTrackOffsetTableForCopy(analyzeResult); // HXY
+    // There must be some problems with the NoniusTrackOffset availability check
+    printf("MU_isNoniusAnalysesValid: %d\n", MU_Calibration_isNoniusAnalysesValid(analyzeResult) ); // HXY
     optionalPrintOptimizedNoniusTrackOffsetTable(
             analyzeResult,
             enableMasterPeriodAutoDetection ? calculatedMasterPeriodCode : masterPeriodCode,

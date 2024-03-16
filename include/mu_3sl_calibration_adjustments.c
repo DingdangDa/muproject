@@ -58,7 +58,7 @@ void printAnalogAdjustmentsForCopy(const MU_Calibration* calibration)
 {
     MU_Calibration_AnalogTrackAdjustments masterTrackAdjustments;
     MU_Calibration_getAnalogMasterTrackAdjustments(calibration, &masterTrackAdjustments);
-    printf("\nForCopy: 0x%02X, 0x%02X, 0x%02X, 0x%02X, 0x%02X ",
+    printf("\nForCopy: 0x%02X, 0x%02X, 0x%02X, 0x%02X, 0x%02X, ",
     masterTrackAdjustments.cosineGain,
     masterTrackAdjustments.sineOffset,
     masterTrackAdjustments.cosineOffset,
@@ -66,7 +66,8 @@ void printAnalogAdjustmentsForCopy(const MU_Calibration* calibration)
     masterTrackAdjustments.phaseRange);
     MU_Calibration_AnalogTrackAdjustments noniusTrackAdjustments;
     MU_Calibration_getAnalogNoniusTrackAdjustments(calibration, &noniusTrackAdjustments);
-    printf("0x%02X, 0x%02X, 0x%02X, 0x%02X\n",
+    printf("0x%02X, 0x%02X, 0x%02X, 0x%02X, 0x%02X\n",
+    noniusTrackAdjustments.cosineGain,
     noniusTrackAdjustments.sineOffset,
     noniusTrackAdjustments.cosineOffset,
     noniusTrackAdjustments.phase,
